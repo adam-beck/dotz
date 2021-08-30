@@ -1,0 +1,5 @@
+[user]
+	email = adam@adambeck.me
+	name = Adam Beck
+[credential]
+	helper = /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret

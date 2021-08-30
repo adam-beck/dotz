@@ -1,0 +1,18 @@
+# alias tmux='tmux -2'
+alias gs='git status'
+alias gl='git log --graph --decorate --pretty=oneline --abbrev-commit'
+alias glog='git log'
+alias gd='git diff'
+alias gpr='git pull --rebase'
+
+# unalias rm 2>/dev/null
+
+alias fix="git diff --name-only | uniq | xargs $EDITOR"
+
+alias ls='lsd'
+alias l='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
+alias lt='ls --tree'
+
+alias docker-compose='docker compose'

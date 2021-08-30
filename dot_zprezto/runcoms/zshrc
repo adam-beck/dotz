@@ -1,0 +1,33 @@
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+eval "$(zoxide init zsh)"
+
+setopt EXTENDED_GLOB
+
+# Tools
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+. $HOME/.asdf/asdf.sh
+
+# End Tools
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --no-ignore-vcs'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+autoload -Uz compinit && compinit
+
+source ~/.zplug/init.zsh
+zplug "urbainvaes/fzf-marks"
+zplug "wfxr/forgit"
+
+zplug load
+
+# Key Mappings
+bindkey "^A" vi-beginning-of-line # Use Ctrl-A to move to the beggining of the line even in "vi" mode
+
+source $HOME/.aliases
+
+# fnm
+export PATH=/home/adam/.fnm:$PATH
+eval "`fnm env`"
